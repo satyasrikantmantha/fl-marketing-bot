@@ -24,7 +24,7 @@ def respond(message, history):
     if len(message.strip()) == 0:
         return "ERROR the question should not be empty"
 
-    url = 'https://skyhive-e2-us-east-1-deployment.cloud.databricks.com/serving-endpoints/dbdemos_endpoint_skyhive_nv_rag_chatbot_custom/invocations'
+    url = os.environ.get("API_URL")
     headers = {'Authorization': f'Bearer {os.environ.get("DATABRICKS_TOKEN")}', 'Content-Type': 'application/json'}
 
 
